@@ -1,0 +1,7 @@
+<div class="flex " [class.justify-end]=isUser()>
+            <div class="chat-bubble assistant-bubble"
+            [class.assistant-bubble]=!isUser()
+            [class.user-bubble]=isUser()>
+                {{message()}}
+            </div>
+</div>

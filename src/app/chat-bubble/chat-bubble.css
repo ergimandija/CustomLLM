@@ -3,6 +3,7 @@
     @apply max-w-[70%]
            px-5
            py-4
+           my-2
            rounded-3xl;
 }
 

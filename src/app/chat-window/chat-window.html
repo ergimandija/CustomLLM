@@ -34,50 +34,13 @@
         py-8
         space-y-6
         bg-white
-    ">
-
+    "
+    id="messageContainer">
         <!-- Assistant -->
+        <app-chat-bubble message="hello, how may i assist you"  />
 
-        <div class="flex">
-
-            <div class="
-                max-w-[70%]
-                bg-gray-100
-                text-gray-800
-                px-5
-                py-4
-                rounded-3xl
-                rounded-bl-md
-                shadow-sm
-            ">
-
-                Hello 👋 How can I help today?
-
-            </div>
-
-        </div>
-
-
-        <!-- User -->
-
-        <div class="flex justify-end">
-
-            <div class="
-                max-w-[70%]
-                bg-green-500
-                text-white
-                px-5
-                py-4
-                rounded-3xl
-                rounded-br-md
-            ">
-
-                Tell me something interesting.
-
-            </div>
-
-        </div>
-
+        <ng-container #container></ng-container>
+        
     </main>
 
 
@@ -94,6 +57,7 @@
 
             <input
                 type="text"
+                [(ngModel)]="currentMessage"
                 placeholder="Type a message..."
                 class="
                     flex-1
@@ -107,7 +71,9 @@
                 "
             >
 
-            <button class="
+            <button 
+            (click)="sendMessage()"
+            class="
                 px-6
                 rounded-2xl
                 bg-green-500
