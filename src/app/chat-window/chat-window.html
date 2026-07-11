@@ -71,20 +71,33 @@
                 "
             >
 
-            <button 
-            (click)="sendMessage()"
-            class="
-                px-6
-                rounded-2xl
-                bg-green-500
-                text-white
-                font-semibold
-                hover:bg-green-400
-                transition
-            ">
-                Send
-            </button>
-
+            @if(this.loadingResponse()){
+                <button
+                (click)="cancelGeneration()"
+                 class="
+                    px-6
+                    rounded-2xl
+                    bg-red-500
+                    text-white
+                    font-semibold
+                    hover:bg-red-600
+                    transition
+                ">X</button>
+            } @else {
+                <button 
+                (click)="sendMessage()"
+                class="
+                    px-6
+                    rounded-2xl
+                    bg-green-500
+                    text-white
+                    font-semibold
+                    hover:bg-green-400
+                    transition
+                ">
+                    Send
+                </button>
+            }
         </div>
 
     </footer>
