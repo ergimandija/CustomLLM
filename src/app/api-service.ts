@@ -12,7 +12,7 @@ export class ApiService {
 
     sendMessage(message:string){
         return this.httpClient.post<any>(this.apiUrl, {
-          "model": "llama2:7b",
+          "model": "liskov-TEST:latest",
           "messages": [
             {
               "role": "user",

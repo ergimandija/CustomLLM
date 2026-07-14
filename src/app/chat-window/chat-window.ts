@@ -59,5 +59,13 @@ export class ChatWindow {
         bubble.setInput('isUser', false);
         return bubble;
     }
+    
+   autoResize(el: HTMLTextAreaElement) {
+    el.style.height = 'auto';               
+    const maxHeight = 160;                 
+    const newHeight = Math.min(el.scrollHeight, maxHeight);
+    el.style.height = `${newHeight}px`;
+    el.style.overflowY = el.scrollHeight > maxHeight ? 'auto' : 'hidden';
+}
 
 }
