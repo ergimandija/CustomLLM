@@ -11,7 +11,7 @@
                         <span></span>
                     </div>
                     } @else {
-                    {{ message() }}
+                        <div [innerHTML]="parse(message())"></div>
                     }
                 </div>
 </div>

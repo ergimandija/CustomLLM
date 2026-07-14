@@ -12,4 +12,10 @@ export class ChatBubble {
   message = input<string>('');
   isUser = input<boolean>(false);
   loading = input<boolean>(false);
+  parse(message: string){
+    return message.replaceAll('\\n', '<br>')
+                  .trim()
+                  .replaceAll('\\', '')
+                  .replaceAll('```', '');
+  }
 }
