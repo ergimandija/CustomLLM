@@ -10,7 +10,8 @@ export class ApiService {
     private httpClient:HttpClient = inject(HttpClient);
     constructor(){} 
 
-    sendMessage(message:string){
+    sendMessage(message:string , temperature:number = 0.8): Observable<any> {
+      console.log("Sending message to API:", message, "with temperature:", temperature);
         return this.httpClient.post<any>(this.apiUrl, {
           "model": "Liskov:latest",
           "messages": [
@@ -22,11 +23,13 @@ export class ApiService {
           ],
           "stream": false,
           "options": {
-            "temperature": 0.7
+            "temperature": temperature
           }
         });
 
     }
+
+    
 
     
 

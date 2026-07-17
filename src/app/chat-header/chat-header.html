@@ -1,0 +1,33 @@
+<header class="
+        px-6
+        py-4
+        bg-gradient-to-r
+        from-green-950
+        via-emerald-800
+        to-green-600
+        text-white
+        flex
+        items-center
+        justify-between
+        shadow-lg
+    ">
+
+    <h1 class="text-xl font-bold">
+        mandijaGPT
+    </h1>
+    <div class="flex items-center gap-2">
+        <h1 class="text-lg font-semibold" (click)="this.menuOpen.set(!this.menuOpen())">
+            Liskov
+        </h1>
+        <div [hidden]="!this.menuOpen()" class="absolute top-16 right-6 bg-white text-black rounded-lg shadow-lg p-6 py-8 flex flex-col gap-2 ">
+            <h1 class="text-lg font-semibold">Settings</h1>
+            <h1 class="text-md font-medium">Model Temperature</h1>
+            <app-range-slider [min]="0" [max]="2" [step]="0.2" [(value)]="sliderValue"></app-range-slider>
+            <div class="text-md font-medium">Other Models</div>
+            <p class="text-sm text-gray-500">In Development...</p>
+        </div>
+        <div class="w-3 h-3 rounded-full bg-green-300 animate-pulse"></div>
+    </div>
+
+
+</header>
