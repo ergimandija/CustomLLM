@@ -7,7 +7,7 @@ import { Message } from './chat-window/chat-window';
 })
 export class ApiService {
     
-    private apiUrl:string =  "http://localhost:11434/api/chat";
+    private apiUrl:string =  "http://localhost:8000/api/chat";
     private httpClient:HttpClient = inject(HttpClient);
     constructor(){} 
 
